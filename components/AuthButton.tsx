@@ -1,6 +1,7 @@
 "use client";
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { Button } from "./ui/button";
 
 export default function AuthButton() {
   const supabase = createClientComponentClient();
@@ -16,9 +17,9 @@ export default function AuthButton() {
     await supabase.auth.signOut();
   };
   return (
-    <>
-      <button onClick={handleSignIn}>Sign In</button>
-      <button onClick={handleSignOut}>Sign Out</button>
-    </>
+    <div className="flex gap-16 my-12">
+      <Button onClick={handleSignIn}>Sign In</Button>
+      <Button onClick={handleSignOut}>Sign Out</Button>
+    </div>
   );
 }
