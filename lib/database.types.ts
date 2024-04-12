@@ -11,27 +11,35 @@ export type Database = {
     Tables: {
       blogs: {
         Row: {
-          author: string | null
+          author_id: string
           content: string | null
           created_at: string
           id: string
           title: string | null
         }
         Insert: {
-          author?: string | null
+          author_id: string
           content?: string | null
           created_at?: string
           id?: string
           title?: string | null
         }
         Update: {
-          author?: string | null
+          author_id?: string
           content?: string | null
           created_at?: string
           id?: string
           title?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "public_blogs_author_id_fkey"
+            columns: ["author_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
