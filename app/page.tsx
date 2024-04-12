@@ -5,7 +5,6 @@ import { cookies } from "next/headers";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AuthButtonServer from "@/components/AuthButtonServer";
-import { redirect } from "next/navigation";
 
 export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies });
