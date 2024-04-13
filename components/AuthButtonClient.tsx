@@ -21,11 +21,9 @@ export default function AuthButtonClient({
     await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: "http://localhost:3000",
+        redirectTo: "http://localhost:3000/auth/callback",
       },
     });
-
-    router.refresh();
   };
 
   const handleSignOut = async () => {

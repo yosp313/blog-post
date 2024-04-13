@@ -3,8 +3,8 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import React from "react";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import AuthButtonClient from "@/components/AuthButtonClient";
+import { HeroHighlightDemo } from "@/components/HighlightHero";
 
 export default async function Login() {
   const supabase = createServerComponentClient<Database>({ cookies });
@@ -12,13 +12,9 @@ export default async function Login() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (user) {
-    redirect("/");
-  }
-
   return (
-    <div className="flex min-h-screen flex-col justify-center items-center">
-      <h1 className="text-3xl font-bold">Welcome to the family of Y?</h1>
+    <div className="flex flex-col justify-center items-center min-h-screen">
+      <HeroHighlightDemo />
       <AuthButtonClient user={user} />
     </div>
   );
