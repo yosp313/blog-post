@@ -18,7 +18,7 @@ export default function BlogForm() {
             <Input placeholder="awesome title" name="title" />
             <Label>Content</Label>
             <Textarea
-              className="w-96"
+              className="w-96 h-36"
               placeholder="awesome sauce"
               name="content"
             />

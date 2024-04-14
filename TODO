@@ -2,7 +2,7 @@
 Todo:
   [X] add acertinty ui components for the hero page
   [X] add a button to redirect to the blogform
-  [] users can delete their own tweets
+  [x] users can delete their own tweets
   [] add the likes join table in supabase
   [] add the like button
   [] implement the like function
