@@ -18,7 +18,7 @@ export default async function HomePage() {
       <h1 className="text-5xl font-bold">Hello, World to Y!</h1>
       {blogs?.map((blog) => (
         <Link key={blog.id} href={`/blogs/${blog.id}`}>
-          <Card className="my-6 max-w-2xl">
+          <Card className="my-6 max-w-4xl">
             <CardHeader>
               <CardTitle>
                 <div className="text-slate-500 text-xs mb-10">
@@ -29,7 +29,7 @@ export default async function HomePage() {
                 </div>
               </CardTitle>
             </CardHeader>
-            <CardContent>{blog.content}</CardContent>
+            <CardContent className="text-wrap">{blog.content}</CardContent>
           </Card>
         </Link>
       ))}

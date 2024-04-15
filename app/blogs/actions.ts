@@ -2,6 +2,7 @@
 
 import { createServerActionClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export const addBlog = async (formData: FormData) => {
 
@@ -17,5 +18,7 @@ export const addBlog = async (formData: FormData) => {
       await supabase
         .from("blogs")
         .insert({ title, content, author_id: user.id });
+      
+      redirect("/")
     }
   };
